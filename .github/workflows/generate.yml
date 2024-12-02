@@ -18,14 +18,10 @@ jobs:
         run: yarn install
       - name: Run tests
         run: yarn test
-      - name: Ingresar a la carpeta android
-        run: cd android
-      - name: Print working directory
-        run: pwd
-      - name: Grant execute permission for gradlew
-        run: chmod g+x gradlew gradlew.bat
-      - name: Build Android APK
-        run: ./gradlew assembleRelease
+      - name: Ingresar a la carpeta android y ejecutar gradlew
+        run: cd android && chmod g+x gradlew gradlew.bat && ./gradlew assembleRelease
+      # - name: Build Android APK
+      #   run: ./gradlew assembleRelease
       - name: Upload APK as artifact
         uses: actions/upload-artifact@v3
         with:
