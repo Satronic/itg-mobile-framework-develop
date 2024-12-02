@@ -20,6 +20,8 @@ jobs:
         run: yarn test
       - name: Ingresar a la carpeta android
         run: cd android
+      - name: Print working directory
+        run: pwd
       - name: Grant execute permission for gradlew
         run: chmod g+x gradlew gradlew.bat
       - name: Build Android APK
