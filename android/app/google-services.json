@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "690578748222",
+    "project_id": "test-core-575f1",
+    "storage_bucket": "test-core-575f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690578748222:android:c3efbb6338bdd03e85f26f",
+        "android_client_info": {
+          "package_name": "com.itgmobileframework"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCetwKRIHi98ySf4JSJwbihrUYf5w7sUJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
