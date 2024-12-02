@@ -19,7 +19,7 @@ jobs:
       - name: Ingresar a la carpeta android
         run: cd android
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+        run: chmod g+x gradlew gradlew.bat
       - name: Build Android APK
         run: ./gradlew assembleRelease
       - name: Upload APK as artifact
