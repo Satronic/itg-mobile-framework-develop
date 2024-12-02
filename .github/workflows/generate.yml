@@ -2,25 +2,27 @@ name: CI/CD
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Install dependencies
-      run: yarn install
-    - name: Run tests
-      run: yarn test
-    - name: Build Android APK
-      run: ./gradlew assembleRelease
-    - name: Upload APK as artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: app-release
-        path: android/app/build/outputs/apk/release/app-release.apk
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: yarn install
+      - name: Run tests
+        run: yarn test
+      - name: Ingresar a la carpeta android
+        run: cd android
+      - name: Build Android APK
+        run: ./gradlew assembleRelease
+      - name: Upload APK as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-release
+          path: android/app/build/outputs/apk/release/app-release.apk
     # - name: Send email notification
     #   uses: dawidd6/action-send-mail@v3
     #   with:
