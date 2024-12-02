@@ -30,7 +30,9 @@ jobs:
           server_address: smtp.mailersend.net
           server_port: 587
           username: Satronic
-          password: 'mlsn.e104ef30f61525ebd99ceef96ccde9d7535716558edd0165c84a054a1df174ce'
+          password: Satronic314@
+          #password: 'mlsn.e104ef30f61525ebd99ceef96ccde9d7535716558edd0165c84a054a1df174ce'
+          #Zt@vT@HnUCm5wqR
           subject: Nueva versión de la app disponible
           body: 'La nueva versión de la app está disponible para descargar: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/app-release.apk'
           from: ${{ github.server_url }}
