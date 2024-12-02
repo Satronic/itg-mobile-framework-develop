@@ -10,6 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: List files in android directory
+        run: ls -l android
       - name: Install dependencies
         run: yarn install
       - name: Run tests
