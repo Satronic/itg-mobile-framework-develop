@@ -1,8 +1,8 @@
-name: "coverage"
+name: 'coverage'
 on:
   pull_request:
     branches:
-      - master
+      - main
       - develop
 jobs:
   code-quality:
