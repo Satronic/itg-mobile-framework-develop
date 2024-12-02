@@ -29,8 +29,8 @@ jobs:
         with:
           server_address: smtp.mailersend.net
           server_port: 587
-          username: Satronic
-          password: Satronic314@
+          username: mlsn.e104ef30f61525ebd99ceef96ccde9d7535716558edd0165c84a054a1df174ce
+          password: mlsn.e104ef30f61525ebd99ceef96ccde9d7535716558edd0165c84a054a1df174ce
           #password: 'mlsn.e104ef30f61525ebd99ceef96ccde9d7535716558edd0165c84a054a1df174ce'
           #Zt@vT@HnUCm5wqR
           subject: Nueva versión de la app disponible
