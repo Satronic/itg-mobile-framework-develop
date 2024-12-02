@@ -35,5 +35,5 @@ jobs:
           #Zt@vT@HnUCm5wqR
           subject: Nueva versión de la app disponible
           body: 'La nueva versión de la app está disponible para descargar: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts/app-release.apk'
-          from: ${{ github.server_url }}
+          from: electronsgm@gmail.com
           to: satroniccorp@gmail.com
