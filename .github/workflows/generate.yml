@@ -27,7 +27,7 @@ jobs:
       - name: Send email notification
         uses: dawidd6/action-send-mail@v3
         with:
-          server_address: smtp.sendgrid.net
+          server_address: smtp.mailersend.net
           server_port: 587
           username: Satronic
           password: 'mlsn.e104ef30f61525ebd99ceef96ccde9d7535716558edd0165c84a054a1df174ce'
