@@ -3,6 +3,7 @@ name: CI/CD
 on:
   pull_request:
     branches: [main]
+    types: [closed] # Solo se activa cuando el PR se cierra (es decir, se integra)
 
 jobs:
   build:
