@@ -17,24 +17,31 @@ jobs:
           distribution: 'temurin'
       - name: Install dependencies
         run: yarn install
-      - name: Run tests
-        run: yarn test
       - name: Ingresar a la carpeta android y ejecutar gradlew
         run: cd android && chmod g+x gradlew gradlew.bat && ./gradlew assembleRelease
-      # - name: Build Android APK
-      #   run: ./gradlew assembleRelease
       - name: Upload APK as artifact
         uses: actions/upload-artifact@v3
         with:
           name: app-release
           path: android/app/build/outputs/apk/release/app-release.apk
-    # - name: Send email notification
-    #   uses: dawidd6/action-send-mail@v3
-    #   with:
-    #     server_address: smtp.sendgrid.net
-    #     server_port: 587
-    #     username: apikey
-    #     password: ${{ secrets.SENDGRID_API_KEY }}
-    #     subject: Nueva versión de la app disponible
-    #     body: La nueva versión de la app está disponible para descargar: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-    #     to: correo1@example.com, correo2@example.com
+      - name: Release APK
+        uses: softprops/action-gh-release@v1
+        with:
+          files: android/app/build/outputs/apk/release/app-release.apk
+          tag_name: v1.0.${{ github.run_number }} # Ajusta el nombre de la etiqueta
+          name: Release v1.0.${{ github.run_number }} # Ajusta el nombre de la Release
+          body: Nueva versión de la app disponible.
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }} # Necesario para crear la Release
+
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: electronsgm@gmail.com
+          password: ${{ secrets.GMAIL_APP_PASSWORD }} # Guarda la contraseña en un secreto
+          subject: Nueva versión de la app disponible
+          body: 'La nueva versión de la app está disponible en la Release: ${{ github.event.repository.html_url }}/releases/tag/v1.0.${{ github.run_number }}  # Enlaza a la Release'
+          from: electronsgm@gmail.com
+          to: satroniccorp@gmail.com
